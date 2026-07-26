@@ -10,13 +10,15 @@ create_symlinks() {
     mkdir -p ~/.config/zsh
     mkdir -p ~/.config/fastfetch
     mkdir -p ~/.config/btop
-    mkdir -p ~/.config/nvim
     mkdir -p ~/.config/btop/themes
+    mkdir -p ~/.config/nvim
 
-link_file \
-    "$DOTFILES/btop/themes/catppuccin_mocha.theme" \
-    "$HOME/.config/btop/themes/catppuccin_mocha.theme"
+    # Tema de btop
+    link_file \
+        "$DOTFILES/btop/themes/catppuccin_mocha.theme" \
+        "$HOME/.config/btop/themes/catppuccin_mocha.theme"
 
+    # Configuración general
     local configs=(
         "kitty/kitty.conf:.config/kitty/kitty.conf"
         "git/.gitconfig:.gitconfig"
@@ -30,4 +32,20 @@ link_file \
         link_file "$DOTFILES/$src" "$HOME/$dest"
     done
 
+    # Configuración específica de KDE Plasma
+    if command -v plasmashell >/dev/null 2>&1; then
+        info "Configurando KDE Plasma..."
+
+        local kde_configs=(
+            "kde/kdeglobals:.config/kdeglobals"
+            "kde/kwinrc:.config/kwinrc"
+            "kde/kcminputrc:.config/kcminputrc"
+            "kde/plasmashellrc:.config/plasmashellrc"
+        )
+
+        for config in "${kde_configs[@]}"; do
+            IFS=":" read -r src dest <<< "$config"
+            link_file "$DOTFILES/$src" "$HOME/$dest"
+        done
+    fi
 }
