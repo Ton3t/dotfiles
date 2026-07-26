@@ -1,22 +1,37 @@
 #!/usr/bin/env bash
 
-set -e
+install_terminal_packages() {
 
-sudo apt update
+    local packages=(
+        git
+        curl
+        wget
+        eza
+        bat
+        fzf
+        zoxide
+        ripgrep
+        fd-find
+        btop
+        fastfetch
+        jq
+        htop
+        tree
+        neovim
+    )
 
-sudo apt install -y \
-git \
-curl \
-wget \
-eza \
-batcat \
-fzf \
-zoxide \
-ripgrep \
-fd-find \
-btop \
-fastfetch \
-jq \
-htop \
-tree \
-neovim
+    info "Instalando herramientas de terminal..."
+
+    sudo apt install -y "${packages[@]}"
+
+}
+
+install_packages() {
+
+    info "Actualizando repositorios..."
+
+    sudo apt update
+
+    install_terminal_packages
+
+}

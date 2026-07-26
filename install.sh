@@ -12,6 +12,8 @@ main() {
     info " Linux Development Environment"
     info "====================================="
 
+    install_packages
+
     create_symlinks
 
     success "Instalación base completada."
