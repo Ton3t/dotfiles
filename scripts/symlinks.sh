@@ -11,11 +11,17 @@ create_symlinks() {
     mkdir -p ~/.config/fastfetch
     mkdir -p ~/.config/btop
     mkdir -p ~/.config/nvim
+    mkdir -p ~/.config/btop/themes
+
+link_file \
+    "$DOTFILES/btop/themes/catppuccin_mocha.theme" \
+    "$HOME/.config/btop/themes/catppuccin_mocha.theme"
 
     local configs=(
         "kitty/kitty.conf:.config/kitty/kitty.conf"
         "git/.gitconfig:.gitconfig"
         "zsh/.zshrc:.zshrc"
+        "btop/btop.conf:.config/btop/btop.conf"
     )
 
     for config in "${configs[@]}"; do
