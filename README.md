@@ -121,3 +121,20 @@ Ejecuta el instalador:
 # 📝 Licencia
 
 Este proyecto se distribuye bajo la licencia MIT.
+
+# 📌 Estado actual
+
+| Componente | Estado |
+|------------|--------|
+| Kubuntu | ✅ |
+| Git | ✅ |
+| Zsh | ✅ |
+| Powerlevel10k | ✅ |
+| Kitty | ✅ |
+| Dotfiles | ✅ |
+| Fastfetch | ⏳ |
+| btop | ⏳ |
+| Docker | ⏳ |
+| Node.js | ⏳ |
+| VS Code | ⏳ |
+| Neovim | ⏳ |
