@@ -1,34 +1,20 @@
-# 🚀 Dotfiles
+# 🐧 Dotfiles
 
-Mi entorno de desarrollo para Linux, creado desde cero y completamente automatizado.
+Mi entorno de desarrollo para Linux, completamente automatizado y versionado con Git.
 
-Este repositorio contiene todos mis archivos de configuración (*dotfiles*) y los scripts necesarios para configurar un sistema Linux recién instalado con las herramientas que utilizo a diario.
+## 🎯 Objetivo
 
-El objetivo es poder preparar un nuevo equipo con el menor número posible de pasos manuales y mantener toda la configuración versionada con Git.
+Este repositorio me permite reconstruir mi entorno de desarrollo desde cero en pocos minutos. Todas las configuraciones se almacenan en Git y el proceso de instalación está automatizado mediante scripts modulares.
 
----
+## ✨ Características
 
-# ✨ Características
+- Instalación con un solo comando.
+- Configuraciones centralizadas en `config/`.
+- Scripts modulares y fáciles de ampliar.
+- Gestión mediante enlaces simbólicos.
+- Pensado para Kubuntu, pero adaptable a otras distribuciones.
 
-Actualmente el proyecto incluye o incluirá:
-
-- 🐚 Zsh
-- ⚡ Powerlevel10k
-- 🖥️ Kitty
-- 🎨 Tema Catppuccin
-- 🔗 Enlaces simbólicos automáticos
-- 📦 Instalación automática de paquetes
-- ⚙️ Scripts modulares
-- 💻 VS Code
-- 🐳 Docker
-- 📦 Node.js mediante NVM
-- 📊 Fastfetch
-- 📈 btop
-- ✍️ Neovim
-
----
-
-# 📂 Estructura del proyecto
+## 📁 Estructura
 
 ```text
 dotfiles/
@@ -37,104 +23,74 @@ dotfiles/
 │   ├── fastfetch/
 │   ├── git/
 │   ├── kitty/
-│   ├── nvim/
 │   ├── vscode/
 │   └── zsh/
-│
 ├── scripts/
-│   ├── docker.sh
-│   ├── fonts.sh
-│   ├── git.sh
-│   ├── node.sh
+│   ├── lib.sh
 │   ├── packages.sh
 │   ├── symlinks.sh
 │   └── utils.sh
-│
 ├── install.sh
 └── README.md
 ```
 
----
-
-# 🚀 Instalación
-
-Clona el repositorio:
+## 🚀 Instalación
 
 ```bash
 git clone https://github.com/Ton3t/dotfiles.git
 cd dotfiles
-```
-
-Ejecuta el instalador:
-
-```bash
+chmod +x install.sh
 ./install.sh
 ```
 
----
+## 📦 Software instalado
 
-# 📋 Hoja de ruta
+- Git
+- Curl
+- Wget
+- Eza
+- Bat
+- FZF
+- Zoxide
+- Ripgrep
+- fd
+- btop
+- Fastfetch
+- jq
+- htop
+- Tree
+- Neovim
 
-## Base del sistema
+## ⚙️ Configuraciones gestionadas
 
-- [x] Git
-- [x] Zsh
-- [x] Powerlevel10k
-- [x] Kitty
-- [x] Dotfiles
+- Zsh
+- Kitty
+- Git
+- btop
+- Fastfetch
 
-## Herramientas de desarrollo
+## 🗺️ Roadmap
 
-- [ ] Node.js (NVM)
+### v1.0
+- [x] Instalador modular
+- [x] Configuración de Zsh
+- [x] Configuración de Kitty
+- [x] Configuración de Git
+- [x] Configuración de btop
+- [x] Configuración de Fastfetch
+
+### v2.0
+- [ ] Node.js
 - [ ] Docker
 - [ ] VS Code
 - [ ] Neovim
-- [ ] LazyGit
+- [ ] GitHub CLI
 
-## Personalización
-
-- [ ] Fastfetch
-- [ ] btop
-- [ ] Tema Catppuccin completo
+### v3.0
 - [ ] Personalización de KDE Plasma
-- [ ] Fuentes e iconos
+- [ ] Temas Catppuccin
+- [ ] Scripts de productividad
 
-## Automatización
+## 📄 Licencia
 
-- [ ] Instalación con un solo comando
-- [ ] Detección automática de la distribución
-- [ ] Scripts idempotentes
-- [ ] Instalación por módulos
-
----
-
-# 🎯 Objetivos
-
-- Automatizar la configuración de un sistema Linux.
-- Mantener toda la configuración bajo control de versiones.
-- Facilitar la reinstalación de un equipo desde cero.
-- Disponer de una estructura clara y fácil de mantener.
-- Aprender y documentar el proceso de personalización de Linux.
-
----
-
-# 📝 Licencia
-
-Este proyecto se distribuye bajo la licencia MIT.
-
-# 📌 Estado actual
-
-| Componente | Estado |
-|------------|--------|
-| Kubuntu | ✅ |
-| Git | ✅ |
-| Zsh | ✅ |
-| Powerlevel10k | ✅ |
-| Kitty | ✅ |
-| Dotfiles | ✅ |
-| Fastfetch | ⏳ |
-| btop | ⏳ |
-| Docker | ⏳ |
-| Node.js | ⏳ |
-| VS Code | ⏳ |
-| Neovim | ⏳ |
+Pendiente de definir.
