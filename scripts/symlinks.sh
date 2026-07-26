@@ -22,6 +22,7 @@ link_file \
         "git/.gitconfig:.gitconfig"
         "zsh/.zshrc:.zshrc"
         "btop/btop.conf:.config/btop/btop.conf"
+        "fastfetch/config.jsonc:.config/fastfetch/config.jsonc"
     )
 
     for config in "${configs[@]}"; do
