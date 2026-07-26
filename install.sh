@@ -4,13 +4,18 @@ set -e
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-source "$ROOT_DIR/scripts/utils.sh"
+source "$ROOT_DIR/scripts/lib.sh"
 
-info "====================================="
-info " Linux Development Environment"
-info "====================================="
+main() {
 
-info "Creando enlaces simbólicos..."
-bash "$ROOT_DIR/scripts/symlinks.sh"
+    info "====================================="
+    info " Linux Development Environment"
+    info "====================================="
 
-success "Instalación base completada."
+    create_symlinks
+
+    success "Instalación base completada."
+
+}
+
+main "$@"
