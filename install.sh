@@ -13,11 +13,20 @@ main() {
     info " Linux Development Environment"
     info "====================================="
 
-    info "Actualizando e instalando paquetes..."
     install_packages
 
-    info "Creando enlaces simbólicos..."
     create_symlinks
+
+    if command -v zsh >/dev/null 2>&1; then
+        if [ "$SHELL" != "$(command -v zsh)" ]; then
+            info "Configurando Zsh como shell por defecto..."
+            chsh -s "$(command -v zsh)"
+            warning "Cierra sesión y vuelve a entrar para aplicar el cambio."
+        fi
+    else
+        error "Zsh no está instalado."
+        exit 1
+    fi
 
     success "Instalación base completada."
 }

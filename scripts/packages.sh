@@ -6,6 +6,7 @@ install_terminal_packages() {
         git
         curl
         wget
+        zsh
         eza
         bat
         fzf
@@ -24,6 +25,7 @@ install_terminal_packages() {
 
     sudo apt install -y "${packages[@]}"
 
+    success "Herramientas de terminal instaladas."
 }
 
 install_packages() {
@@ -33,5 +35,4 @@ install_packages() {
     sudo apt update
 
     install_terminal_packages
-
 }
