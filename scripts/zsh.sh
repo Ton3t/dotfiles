@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-configure_zsh() {
+install_zsh() {
 
-    if ! command -v zsh >/dev/null 2>&1; then
-        error "Zsh no está instalado."
-        exit 1
-    fi
+    install_oh_my_zsh
+
+    install_powerlevel10k
+
+    install_zsh_plugins
 
     if [ "$SHELL" != "$(command -v zsh)" ]; then
         info "Configurando Zsh como shell por defecto..."
