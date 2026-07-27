@@ -13,18 +13,9 @@ install_fonts() {
 
     mkdir -p "$fonts_dir"
 
-    local tmp_dir
-    tmp_dir=$(mktemp -d)
-
-    curl -L \
-        -o "$tmp_dir/Meslo.zip" \
-        https://github.com/romkatv/powerlevel10k-media/raw/master/Meslo.zip
-
-    unzip -o "$tmp_dir/Meslo.zip" -d "$fonts_dir"
+    cp "$ROOT_DIR"/fonts/MesloLGSNF/*.ttf "$fonts_dir/"
 
     fc-cache -fv >/dev/null
-
-    rm -rf "$tmp_dir"
 
     success "MesloLGS NF instalada."
 
