@@ -12,6 +12,7 @@ source "$ROOT_DIR/scripts/oh-my-zsh.sh"
 source "$ROOT_DIR/scripts/powerlevel10k.sh"
 source "$ROOT_DIR/scripts/zsh-plugins.sh"
 source "$ROOT_DIR/scripts/zsh.sh"
+source "$ROOT_DIR/scripts/themes.sh"
 
 main() {
 
@@ -24,6 +25,8 @@ main() {
     install_fonts
 
     install_zsh
+
+    install_themes
 
     create_symlinks
 
