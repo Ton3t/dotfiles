@@ -6,8 +6,9 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source "$ROOT_DIR/scripts/utils.sh"
 source "$ROOT_DIR/scripts/packages.sh"
-source "$ROOT_DIR/scripts/symlinks.sh"
 source "$ROOT_DIR/scripts/zsh.sh"
+source "$ROOT_DIR/scripts/oh-my-zsh.sh"
+source "$ROOT_DIR/scripts/symlinks.sh"
 
 main() {
     info "====================================="
@@ -16,9 +17,11 @@ main() {
 
     install_packages
 
-    create_symlinks
-
     configure_zsh
+
+    install_oh_my_zsh
+
+    create_symlinks
 
     success "Instalación base completada."
 
