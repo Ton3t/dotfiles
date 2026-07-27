@@ -109,7 +109,7 @@ ColorSchemeHash=70452fe35c028201ec2b18b043a052dc4f48817d
 TerminalApplication=kitty
 TerminalService=kitty.desktop
 accentColorFromWallpaper=false
-font=JetBrainsMonoNL Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=MesloLGS NF,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [KDE]
 LookAndFeelPackage=Catppuccin.Mocha

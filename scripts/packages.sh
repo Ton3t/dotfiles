@@ -6,6 +6,7 @@ install_terminal_packages() {
         git
         curl
         wget
+        unzip
         zsh
         eza
         bat
