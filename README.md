@@ -1,7 +1,7 @@
 <h1 align="center">🐧 Dotfiles</h1>
 
 <p align="center">
-  <img src="assets/screenshots/desktop.png" alt="Desktop Screenshot" width="900">
+  <img src="assets/screenshots/escritorio.png" alt="Desktop Screenshot" width="900">
 </p>
 
 <p align="center">
