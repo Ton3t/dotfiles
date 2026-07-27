@@ -7,6 +7,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$ROOT_DIR/scripts/utils.sh"
 source "$ROOT_DIR/scripts/packages.sh"
 source "$ROOT_DIR/scripts/symlinks.sh"
+source "$ROOT_DIR/scripts/zsh.sh"
 
 main() {
     info "====================================="
@@ -16,6 +17,10 @@ main() {
     install_packages
 
     create_symlinks
+
+    configure_zsh
+
+    success "Instalación base completada."
 
     if command -v zsh >/dev/null 2>&1; then
         if [ "$SHELL" != "$(command -v zsh)" ]; then
@@ -28,7 +33,6 @@ main() {
         exit 1
     fi
 
-    success "Instalación base completada."
 }
 
 main "$@"
