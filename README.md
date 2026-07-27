@@ -1,3 +1,13 @@
+<h1 align="center">🐧 Dotfiles</h1>
+
+<p align="center">
+  <img src="assets/screenshots/desktop.png" alt="Desktop Screenshot" width="900">
+</p>
+
+<p align="center">
+  Mi entorno de desarrollo para Linux, completamente automatizado y versionado con Git.
+</p>
+
 # 🐧 Dotfiles
 
 Mi entorno de desarrollo para Linux, completamente automatizado y versionado con Git.
@@ -8,17 +18,20 @@ Este repositorio contiene mi configuración personal para Linux y un instalador 
 
 ## ✨ Características
 
-- Instalación con un solo comando.
-- Configuraciones centralizadas en `config/`.
+- Instalación automatizada con un solo comando.
+- Gestión de configuraciones mediante enlaces simbólicos.
+- Copias de seguridad automáticas (`.backup`) antes de sobrescribir archivos.
+- Configuración de KDE Plasma y tema Catppuccin Mocha.
 - Scripts modulares y fáciles de ampliar.
-- Gestión mediante enlaces simbólicos.
-- Pensado para Kubuntu, pero adaptable a otras distribuciones.
+- Compatible con Kubuntu y adaptable a otras distribuciones Linux.
 
 ## 📁 Estructura
 
 ```text
 dotfiles/
 ├── assets/
+│   └── screenshots/
+│       └── escritorio.png
 ├── config/
 │   ├── btop/
 │   ├── fastfetch/
@@ -34,6 +47,15 @@ dotfiles/
 ├── install.sh
 └── README.md
 ```
+
+## 📂 Organización
+
+| Ruta | Descripción |
+|------|-------------|
+| `assets/` | Recursos del proyecto (capturas, fondos, fuentes, etc.). |
+| `config/` | Archivos de configuración gestionados por el instalador. |
+| `scripts/` | Scripts modulares utilizados durante la instalación. |
+| `install.sh` | Punto de entrada del instalador. |
 
 ## 🚀 Instalación
 
