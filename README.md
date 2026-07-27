@@ -4,7 +4,7 @@ Mi entorno de desarrollo para Linux, completamente automatizado y versionado con
 
 ## 🎯 Objetivo
 
-Este repositorio me permite reconstruir mi entorno de desarrollo desde cero en pocos minutos. Todas las configuraciones se almacenan en Git y el proceso de instalación está automatizado mediante scripts modulares.
+Este repositorio contiene mi configuración personal para Linux y un instalador que permite reconstruir mi entorno de desarrollo de forma rápida y reproducible.
 
 ## ✨ Características
 
@@ -18,15 +18,16 @@ Este repositorio me permite reconstruir mi entorno de desarrollo desde cero en p
 
 ```text
 dotfiles/
+├── assets/
 ├── config/
 │   ├── btop/
 │   ├── fastfetch/
 │   ├── git/
+│   ├── kde/
 │   ├── kitty/
 │   ├── vscode/
 │   └── zsh/
 ├── scripts/
-│   ├── lib.sh
 │   ├── packages.sh
 │   ├── symlinks.sh
 │   └── utils.sh
@@ -42,6 +43,9 @@ cd dotfiles
 chmod +x install.sh
 ./install.sh
 ```
+
+> [!NOTE]
+> El instalador crea copias de seguridad (`.backup`) antes de reemplazar cualquier archivo de configuración existente.
 
 ## 📦 Software instalado
 
@@ -68,6 +72,7 @@ chmod +x install.sh
 - Git
 - btop
 - Fastfetch
+- KDE Plasma (tema y preferencias)
 
 ## 🗺️ Roadmap
 
@@ -78,6 +83,8 @@ chmod +x install.sh
 - [x] Configuración de Git
 - [x] Configuración de btop
 - [x] Configuración de Fastfetch
+- [x] Configuración de KDE Plasma
+- [x] Tema Catppuccin Mocha
 
 ### v2.0
 - [ ] Node.js
@@ -94,3 +101,4 @@ chmod +x install.sh
 ## 📄 Licencia
 
 Pendiente de definir.
+
