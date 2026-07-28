@@ -8,6 +8,7 @@ install_terminal_packages() {
         wget
         unzip
         zsh
+        kitty
         eza
         bat
         fzf
