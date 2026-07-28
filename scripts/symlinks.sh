@@ -35,21 +35,4 @@ create_symlinks() {
         link_file "$DOTFILES/$src" "$HOME/$dest"
     done
 
-    # Configuración específica de KDE Plasma
-    if command -v plasmashell >/dev/null 2>&1; then
-        info "Configurando KDE Plasma..."
-
-        local kde_configs=(
-            "kde/kdeglobals:.config/kdeglobals"
-            "kde/kwinrc:.config/kwinrc"
-            "kde/kcminputrc:.config/kcminputrc"
-            "kde/plasmashellrc:.config/plasmashellrc"
-        )
-
-        for config in "${kde_configs[@]}"; do
-            IFS=":" read -r src dest <<< "$config"
-            link_file "$DOTFILES/$src" "$HOME/$dest"
-        done
-    fi
-
 }

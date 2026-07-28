@@ -33,7 +33,6 @@ El objetivo es disponer siempre del mismo entorno de trabajo en cualquier equipo
 - 🔗 Gestión de configuraciones mediante enlaces simbólicos.
 - 💾 Copias de seguridad automáticas (`.backup`).
 - 📦 Scripts modulares y fáciles de mantener.
-- 🎨 Configuración de KDE Plasma y Catppuccin.
 - 🖥️ Configuración completa de Zsh.
 - ⚡ Powerlevel10k.
 - 🔌 Plugins de Zsh.
@@ -53,7 +52,6 @@ dotfiles/
 │   ├── btop/
 │   ├── fastfetch/
 │   ├── git/
-│   ├── kde/
 │   ├── kitty/
 │   ├── vscode/
 │   └── zsh/
@@ -182,8 +180,6 @@ Actualmente el instalador configura automáticamente:
 - Git
 - Fastfetch
 - btop
-- KDE Plasma
-- Tema Catppuccin
 
 ---
 
@@ -234,9 +230,6 @@ La configuración está organizada en varios archivos para facilitar el mantenim
 
 ## v3.0
 
-- [ ] Configuración completa de KDE Plasma
-- [ ] Wallpapers automáticos
-- [ ] Temas Catppuccin completos
 - [ ] Fuentes Nerd Fonts
 - [ ] Scripts de productividad
 - [ ] Instalación por perfiles (Developer, Minimal, Server)
