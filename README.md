@@ -1,247 +1,163 @@
-<h1 align="center">🐧 Dotfiles</h1>
-
-<p align="center">
-  <img src="assets/screenshots/escritorio.png" alt="Desktop Screenshot" width="900">
-</p>
-
-<p align="center">
-  Mi entorno de desarrollo para Linux, completamente automatizado y versionado con Git.
-</p>
-
-<p align="center">
-
-![Linux](https://img.shields.io/badge/Linux-Ubuntu%20%7C%20Kubuntu-E95420?logo=ubuntu&logoColor=white)
-![Shell](https://img.shields.io/badge/Shell-Zsh-89e051?logo=gnu-bash&logoColor=white)
-![Terminal](https://img.shields.io/badge/Terminal-Kitty-7DCFFF)
-![License](https://img.shields.io/badge/License-MIT-blue)
-
-</p>
-
----
-
 # 🐧 Dotfiles
 
-Este repositorio contiene toda la configuración de mi entorno de desarrollo en Linux y un instalador automatizado capaz de reconstruirlo desde cero con un único comando.
+Configuración de mi entorno de desarrollo para Linux, completamente automatizada y versionada con Git.
 
-El objetivo es disponer siempre del mismo entorno de trabajo en cualquier equipo, manteniendo toda la configuración versionada con Git.
-
----
-
-# ✨ Características
-
-- 🚀 Instalación automatizada con un solo comando.
-- 🔗 Gestión de configuraciones mediante enlaces simbólicos.
-- 💾 Copias de seguridad automáticas (`.backup`).
-- 📦 Scripts modulares y fáciles de mantener.
-- 🖥️ Configuración completa de Zsh.
-- ⚡ Powerlevel10k.
-- 🔌 Plugins de Zsh.
-- 📁 Proyecto preparado para seguir creciendo.
+El objetivo de este proyecto es poder clonar el repositorio en una instalación limpia y tener mi entorno de trabajo listo con un único comando.
 
 ---
 
-# 📁 Estructura del proyecto
+## ✨ Características
+
+* Instalación automática mediante un único script.
+* Estructura modular y fácil de mantener.
+* Configuración mediante enlaces simbólicos.
+* Idempotente: puede ejecutarse varias veces sin romper la instalación.
+* Fácil de ampliar con nuevos módulos.
+
+---
+
+## 📦 Software instalado
+
+El instalador configura automáticamente las siguientes herramientas:
+
+* Git
+* Curl
+* Wget
+* Unzip
+* Kitty
+* Zsh
+* Oh My Zsh
+* Powerlevel10k
+* zsh-autosuggestions
+* zsh-syntax-highlighting
+* fzf-tab
+* eza
+* bat
+* fzf
+* zoxide
+* ripgrep
+* fd
+* btop
+* Fastfetch
+* jq
+* htop
+* tree
+* Neovim
+
+---
+
+## ⚙️ Configuraciones gestionadas
+
+Actualmente el repositorio versiona la configuración de:
+
+* Kitty
+* Zsh
+* Powerlevel10k
+* Git
+* Fastfetch
+* btop
+
+---
+
+## 📁 Estructura del proyecto
 
 ```text
 dotfiles/
-├── assets/
-│   └── screenshots/
-│       └── escritorio.png
-│
 ├── config/
 │   ├── btop/
 │   ├── fastfetch/
 │   ├── git/
 │   ├── kitty/
-│   ├── vscode/
 │   └── zsh/
-│       ├── .zshrc
-│       ├── aliases.zsh
-│       ├── history.zsh
-│       └── plugins.zsh
-│
+├── fonts/
+│   └── MesloLGSNF/
 ├── scripts/
+│   ├── fonts.sh
+│   ├── oh-my-zsh.sh
 │   ├── packages.sh
-│   ├── symlinks.sh
-│   ├── zsh.sh
-│   ├── zsh-plugins.sh
 │   ├── powerlevel10k.sh
-│   └── utils.sh
-│
+│   ├── symlinks.sh
+│   ├── utils.sh
+│   ├── zsh-plugins.sh
+│   └── zsh.sh
 ├── install.sh
 └── README.md
 ```
 
 ---
 
-# 📂 Organización
+## 🚀 Instalación
 
-| Ruta | Descripción |
-|------|-------------|
-| `assets/` | Capturas de pantalla, fondos y otros recursos. |
-| `config/` | Archivos de configuración gestionados por el instalador. |
-| `scripts/` | Scripts modulares utilizados durante la instalación. |
-| `install.sh` | Punto de entrada del proyecto. |
-
----
-
-# 🛠 Scripts
-
-| Script | Función |
-|---------|----------|
-| `install.sh` | Orquesta toda la instalación. |
-| `packages.sh` | Instala las dependencias del sistema. |
-| `zsh.sh` | Instala y configura Zsh y Oh My Zsh. |
-| `zsh-plugins.sh` | Instala los plugins de Zsh. |
-| `powerlevel10k.sh` | Instala Powerlevel10k. |
-| `symlinks.sh` | Crea los enlaces simbólicos hacia los dotfiles. |
-| `utils.sh` | Funciones compartidas por el resto de scripts. |
-
----
-
-# 🚀 Instalación
+Clona el repositorio:
 
 ```bash
 git clone https://github.com/Ton3t/dotfiles.git
+```
+
+Entra en la carpeta:
+
+```bash
 cd dotfiles
+```
+
+Da permisos de ejecución:
+
+```bash
 chmod +x install.sh
+```
+
+Ejecuta el instalador:
+
+```bash
 ./install.sh
 ```
 
 ---
 
-# ✅ Requisitos
+## 📝 Notas
 
-- Ubuntu / Kubuntu
-- Conexión a Internet
-- Git instalado
-- Permisos de sudo
-
----
-
-# ⚙️ ¿Qué hace el instalador?
-
-Durante la instalación se realizan automáticamente los siguientes pasos:
-
-1. Actualiza los repositorios.
-2. Instala los paquetes necesarios.
-3. Instala Zsh.
-4. Instala Oh My Zsh.
-5. Instala Powerlevel10k.
-6. Instala los plugins de Zsh.
-7. Crea los enlaces simbólicos.
-8. Genera copias de seguridad antes de sobrescribir archivos existentes.
+* El instalador configura **Zsh** como shell por defecto.
+* Kitty se instala y queda configurado automáticamente.
+* Si utilizas un entorno de escritorio (KDE, GNOME, etc.), el terminal predeterminado puede seguir siendo el que venga configurado por defecto. Kitty podrá seleccionarse manualmente desde las preferencias del sistema.
 
 ---
 
-# 📦 Software instalado
+## 🛣️ Roadmap
 
-## Shell
+### v1.0
 
-- Zsh
-- Oh My Zsh
-- Powerlevel10k
+* [x] Instalador modular
+* [x] Instalación automática de paquetes
+* [x] Kitty
+* [x] Zsh
+* [x] Oh My Zsh
+* [x] Powerlevel10k
+* [x] Plugins de Zsh
+* [x] MesloLGS NF
+* [x] Git
+* [x] Fastfetch
+* [x] btop
 
-## Plugins
+### v1.1
 
-- zsh-autosuggestions
-- zsh-syntax-highlighting
+* [ ] Node.js (NVM)
+* [ ] Corepack + pnpm
+* [ ] GitHub CLI
 
-## Terminal
+### v2.0
 
-- Kitty
-- Fastfetch
-- btop
-
-## Utilidades
-
-- Git
-- Curl
-- Wget
-- Eza
-- Bat
-- FZF
-- Zoxide
-- Ripgrep
-- fd
-- jq
-- htop
-- Tree
-- Neovim
+* [ ] Docker
+* [ ] VS Code
+* [ ] Neovim
 
 ---
 
-# ⚙️ Configuraciones gestionadas
+## 🤝 Contribuciones
 
-Actualmente el instalador configura automáticamente:
-
-- Zsh
-- Kitty
-- Git
-- Fastfetch
-- btop
+Si encuentras algún problema o tienes una sugerencia para mejorar el proyecto, no dudes en abrir una *Issue* o enviar un *Pull Request*.
 
 ---
 
-# 💻 Configuración de Zsh
+## 📄 Licencia
 
-La configuración está organizada en varios archivos para facilitar el mantenimiento.
-
-| Archivo | Función |
-|----------|----------|
-| `.zshrc` | Configuración principal del shell. |
-| `aliases.zsh` | Alias personalizados. |
-| `plugins.zsh` | Plugins cargados por Zsh. |
-| `history.zsh` | Configuración del historial. |
-
----
-
-# 🗺️ Roadmap
-
-## v1.0
-
-- [x] Instalador modular
-- [x] Gestión de dotfiles
-- [x] Configuración de Git
-- [x] Configuración de Kitty
-- [x] Configuración de Fastfetch
-- [x] Configuración de btop
-- [x] Configuración de Zsh
-- [x] Instalación de Oh My Zsh
-- [x] Instalación de Powerlevel10k
-- [x] Instalación de plugins de Zsh
-- [x] Copias de seguridad automáticas
-
----
-
-## v2.0
-
-- [ ] Node.js (NVM)
-- [ ] pnpm
-- [ ] Docker
-- [ ] Docker Compose
-- [ ] GitHub CLI
-- [ ] VS Code
-- [ ] Neovim completo
-- [ ] LazyGit
-- [ ] Tmux
-
----
-
-## v3.0
-
-- [ ] Fuentes Nerd Fonts
-- [ ] Scripts de productividad
-- [ ] Instalación por perfiles (Developer, Minimal, Server)
-
----
-
-# 🤝 Contribuciones
-
-Este proyecto está pensado principalmente para mi uso personal, pero cualquier sugerencia o mejora es bienvenida mediante un Issue o Pull Request.
-
----
-
-# 📄 Licencia
-
-Este proyecto está distribuido bajo la licencia **MIT**.
+Este proyecto está distribuido bajo la licencia MIT.
