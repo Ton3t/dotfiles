@@ -42,33 +42,3 @@ install_node() {
     success "Node.js instalado."
 
 }
-
-install_corepack() {
-
-    info "Activando Corepack..."
-
-    load_nvm
-
-    corepack enable
-
-    success "Corepack activado."
-
-}
-
-install_pnpm() {
-
-    if command -v pnpm >/dev/null 2>&1; then
-        success "pnpm ya está instalado."
-        return
-    fi
-
-    info "Instalando pnpm..."
-
-    load_nvm
-
-    corepack enable
-    corepack prepare pnpm@latest --activate
-
-    success "pnpm instalado."
-
-}

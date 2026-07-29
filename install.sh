@@ -30,8 +30,6 @@ main() {
 
     install_nvm
     install_node
-    install_corepack
-    install_pnpm
 
     success "Instalación base completada."
 
