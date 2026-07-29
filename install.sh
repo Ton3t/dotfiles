@@ -12,6 +12,7 @@ source "$ROOT_DIR/scripts/oh-my-zsh.sh"
 source "$ROOT_DIR/scripts/powerlevel10k.sh"
 source "$ROOT_DIR/scripts/zsh-plugins.sh"
 source "$ROOT_DIR/scripts/zsh.sh"
+source "$ROOT_DIR/scripts/node.sh"
 
 main() {
 
@@ -27,7 +28,13 @@ main() {
 
     create_symlinks
 
+    install_nvm
+    install_node
+    install_corepack
+    install_pnpm
+
     success "Instalación base completada."
+
 
 }
 
