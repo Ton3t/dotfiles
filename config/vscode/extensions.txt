@@ -1,0 +1,13 @@
+bradlc.vscode-tailwindcss
+catppuccin.catppuccin-vsc
+catppuccin.catppuccin-vsc-icons
+christian-kohler.path-intellisense
+dbaeumer.vscode-eslint
+dsznajder.es7-react-js-snippets
+eamodio.gitlens
+esbenp.prettier-vscode
+formulahendry.auto-rename-tag
+ms-azuretools.vscode-containers
+ms-azuretools.vscode-docker
+usernamehw.errorlens
+yzhang.markdown-all-in-one

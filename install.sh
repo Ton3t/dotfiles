@@ -14,6 +14,7 @@ source "$ROOT_DIR/scripts/zsh-plugins.sh"
 source "$ROOT_DIR/scripts/zsh.sh"
 source "$ROOT_DIR/scripts/node.sh"
 source "$ROOT_DIR/scripts/github.sh"
+source "$ROOT_DIR/scripts/vscode.sh"
 
 main() {
 
@@ -33,6 +34,9 @@ main() {
     install_node
 
     install_github_cli
+
+    install_vscode
+    install_vscode_extensions
 
     success "Instalación base completada."
 

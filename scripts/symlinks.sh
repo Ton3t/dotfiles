@@ -11,6 +11,7 @@ create_symlinks() {
     mkdir -p "$HOME/.config/fastfetch"
     mkdir -p "$HOME/.config/btop/themes"
     mkdir -p "$HOME/.config/nvim"
+    mkdir -p ~/.config/Code/User
 
     # Tema de btop
     link_file \
@@ -28,6 +29,8 @@ create_symlinks() {
         "zsh/plugins.zsh:.config/zsh/plugins.zsh"
         "btop/btop.conf:.config/btop/btop.conf"
         "fastfetch/config.jsonc:.config/fastfetch/config.jsonc"
+	"vscode/settings.json:.config/Code/User/settings.json"
+	"vscode/keybindings.json:.config/Code/User/keybindings.json"
     )
 
     for config in "${configs[@]}"; do
