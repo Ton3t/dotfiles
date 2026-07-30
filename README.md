@@ -1,178 +1,220 @@
 # 🐧 Dotfiles
 
-Configuración automática de mi entorno de desarrollo para **Ubuntu/Kubuntu**, completamente versionada con Git y diseñada para dejar una instalación limpia lista para trabajar en pocos minutos.
+Un entorno de desarrollo para Linux completamente automatizado, reproducible y versionado con Git.
 
-El objetivo de este proyecto es automatizar toda la configuración de un nuevo sistema para que únicamente sea necesario clonar el repositorio y ejecutar un único script.
-
----
-
-# ✨ Características
-
-Actualmente el instalador configura automáticamente:
-
-* 🖥️ Zsh como shell por defecto.
-* ⚡ Oh My Zsh.
-* 🎨 Powerlevel10k.
-* 🔤 Fuente MesloLGS NF.
-* 🔌 Plugins de Zsh.
-* 🐱 Kitty Terminal.
-* 📦 Herramientas de desarrollo.
-* 🟢 NVM.
-* 🟢 Node.js LTS.
-* 🐙 GitHub CLI.
-* 💻 Visual Studio Code.
-* ⚙️ Configuración de VS Code.
-* 🧩 Instalación automática de extensiones de VS Code.
-* 🔗 Symlinks para mantener toda la configuración versionada.
+Con un solo comando podrás configurar un sistema nuevo con todas las herramientas que utilizo para desarrollar aplicaciones web.
 
 ---
 
-# 📦 Software instalado
+## ✨ Características
+
+* 🚀 Instalación completamente automatizada.
+* 📦 Estructura modular basada en scripts.
+* 🔗 Configuración mediante symlinks.
+* 🖥️ Terminal moderna con Zsh + Powerlevel10k.
+* 🎨 Kitty configurado con Catppuccin Mocha.
+* 💻 Visual Studio Code listo para usar.
+* 📦 Node.js LTS mediante NVM.
+* 🐳 Docker y Docker Compose.
+* 🌐 GitHub CLI.
+* 🌳 LazyGit.
+* ⚡ Alias útiles para el día a día.
+* 🔄 Probado en máquinas virtuales desde cero.
+
+---
+
+# 📂 Estructura del proyecto
+
+```text
+ dotfiles
+├── 󰊢 .gitignore
+├──  config
+│   ├──  btop
+│   │   ├── 󱁻 btop.conf
+│   │   └──  themes
+│   ├──  fastfetch
+│   │   └──  config.jsonc
+│   ├──  git
+│   │   └── 󰊢 .gitconfig
+│   ├──  kitty
+│   │   └── 󱁻 kitty.conf
+│   ├──  vscode
+│   │   ├──  extensions.txt
+│   │   ├──  keybindings.json
+│   │   └──  settings.json
+│   └──  zsh
+│       ├──  .p10k.zsh
+│       ├── 󱆃 .zshrc
+│       ├──  aliases.zsh
+│       ├──  history.zsh
+│       └──  plugins.zsh
+├──  fonts
+│   └──  MesloLGSNF
+│       ├──  MesloLGS_NF_Bold.ttf
+│       ├──  MesloLGS_NF_Bold_Italic.ttf
+│       ├──  MesloLGS_NF_Italic.ttf
+│       └──  MesloLGS_NF_Regular.ttf
+├──  install.sh
+├── 󰂺 README.md
+└──  scripts
+    ├──  config
+    │   └──  vscode
+    ├──  docker.sh
+    ├──  fonts.sh
+    ├──  github.sh
+    ├──  lazygit.sh
+    ├──  node.sh
+    ├──  oh-my-zsh.sh
+    ├──  packages.sh
+    ├──  powerlevel10k.sh
+    ├──  symlinks.sh
+    ├──  utils.sh
+    ├──  vscode.sh
+    ├──  zsh-plugins.sh
+    └──  zsh.sh
+```
+
+---
+
+# ⚙️ ¿Qué instala?
+
+## Sistema
+
+* Git
+* Curl
+* Wget
+* Unzip
+* Tree
+* Bat
+* Eza
+* FZF
+* Zoxide
+* Ripgrep
+* fd
+* Btop
+* Fastfetch
+* jq
+* Htop
+
+---
 
 ## Terminal
 
-* git
-* curl
-* wget
-* unzip
-* zsh
-* kitty
+* Zsh
+* Oh My Zsh
+* Powerlevel10k
+* MesloLGS NF
+* Kitty
+* Plugins:
 
-## Utilidades
+  * zsh-autosuggestions
+  * zsh-syntax-highlighting
+  * fzf-tab
 
-* eza
-* bat
-* fzf
-* zoxide
-* ripgrep
-* fd-find
-* btop
-* fastfetch
-* jq
-* htop
-* tree
+---
 
 ## Desarrollo
 
 * NVM
 * Node.js LTS
 * GitHub CLI
+* Docker
+* Docker Compose
+* LazyGit
 * Visual Studio Code
 
 ---
 
-# 🧩 Extensiones de Visual Studio Code
+## Visual Studio Code
 
-El instalador instala automáticamente las extensiones definidas en:
+El instalador configura automáticamente:
 
-```text
-config/vscode/extensions.txt
-```
+* Settings
+* Keybindings
+* Extensiones
 
-Actualmente:
+Extensiones incluidas:
 
 * Tailwind CSS IntelliSense
+* ESLint
+* Prettier
+* Error Lens
+* GitLens
+* Docker
+* Containers
+* Path Intellisense
+* ES7 React Snippets
+* Auto Rename Tag
+* Markdown All in One
 * Catppuccin Theme
 * Catppuccin Icons
-* Path Intellisense
-* ESLint
-* ES7 React Snippets
-* GitLens
-* Prettier
-* Auto Rename Tag
-* Dev Containers
-* Docker
-* Error Lens
-* Markdown All in One
-
----
-
-# 📁 Estructura
-
-```text
-dotfiles
-├── config
-│   ├── btop
-│   ├── fastfetch
-│   ├── git
-│   ├── kitty
-│   ├── vscode
-│   └── zsh
-│
-├── scripts
-│   ├── fonts.sh
-│   ├── github.sh
-│   ├── node.sh
-│   ├── oh-my-zsh.sh
-│   ├── packages.sh
-│   ├── powerlevel10k.sh
-│   ├── symlinks.sh
-│   ├── utils.sh
-│   ├── vscode.sh
-│   ├── zsh-plugins.sh
-│   └── zsh.sh
-│
-├── install.sh
-└── README.md
-```
 
 ---
 
 # 🚀 Instalación
 
-Clona el repositorio:
-
 ```bash
-git clone <repositorio>
+git clone https://github.com/Ton3t/dotfiles.git
+
 cd dotfiles
-```
 
-Da permisos al instalador:
-
-```bash
 chmod +x install.sh
-```
 
-Ejecuta la instalación:
-
-```bash
 ./install.sh
 ```
 
-Al finalizar, el instalador preguntará si deseas reiniciar el sistema para aplicar todos los cambios.
+Al finalizar la instalación se solicitará reiniciar el equipo para aplicar todos los cambios.
 
 ---
 
-# ⚙️ Configuración
+# 🐳 Docker
 
-Toda la configuración se mantiene versionada mediante enlaces simbólicos.
+El instalador configura automáticamente:
 
-Actualmente se gestionan:
+* Repositorio oficial de Docker.
+* Docker Engine.
+* Docker Compose Plugin.
+* Grupo `docker`.
+* Verificación de la instalación.
 
-* Kitty
+---
+
+# 🌳 Git
+
+También instala y configura:
+
 * Git
-* Zsh
-* Powerlevel10k
-* Fastfetch
-* Btop
-* Visual Studio Code
-
-Modificar cualquier archivo dentro de `config/` actualiza automáticamente la configuración del sistema.
+* GitHub CLI
+* LazyGit
 
 ---
 
-# 🎯 Objetivos
+# 💻 Visual Studio Code
 
-Este proyecto pretende convertirse en un entorno de desarrollo completamente automatizado que incluya:
+Además de instalar VS Code, el proyecto sincroniza automáticamente:
 
-* ✅ Terminal moderna
-* ✅ Visual Studio Code
-* 🚧 Docker
-* 🚧 LazyGit
-* 🚧 Herramientas adicionales de desarrollo
+* Configuración
+* Atajos de teclado
+* Extensiones
+
+Todo queda listo para empezar a trabajar.
+
+---
+
+# 📌 Filosofía
+
+Este proyecto busca ser:
+
+* Modular.
+* Fácil de mantener.
+* Fácil de ampliar.
+* Reproducible.
+* Rápido de instalar.
+
+Cada componente dispone de su propio script independiente para facilitar su mantenimiento.
 
 ---
 
 # 📄 Licencia
 
-Proyecto personal para automatizar la configuración de un entorno de desarrollo Linux.
+Proyecto personal creado para automatizar la configuración de mi entorno de desarrollo en Linux.
