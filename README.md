@@ -1,163 +1,180 @@
 # 🐧 Dotfiles
 
-Configuración de mi entorno de desarrollo para Linux, completamente automatizada y versionada con Git.
+Configuración automática de mi entorno de desarrollo para **Ubuntu/Kubuntu**, completamente versionada con Git y diseñada para dejar una instalación limpia lista para trabajar en pocos minutos.
 
-El objetivo de este proyecto es poder clonar el repositorio en una instalación limpia y tener mi entorno de trabajo listo con un único comando.
-
----
-
-## ✨ Características
-
-* Instalación automática mediante un único script.
-* Estructura modular y fácil de mantener.
-* Configuración mediante enlaces simbólicos.
-* Idempotente: puede ejecutarse varias veces sin romper la instalación.
-* Fácil de ampliar con nuevos módulos.
+El objetivo de este proyecto es automatizar toda la configuración de un nuevo sistema para que únicamente sea necesario clonar el repositorio y ejecutar un único script.
 
 ---
 
-## 📦 Software instalado
+# ✨ Características
 
-El instalador configura automáticamente las siguientes herramientas:
+Actualmente el instalador configura automáticamente:
 
-* Git
-* Curl
-* Wget
-* Unzip
-* Kitty
-* Zsh
-* Oh My Zsh
-* Powerlevel10k
-* zsh-autosuggestions
-* zsh-syntax-highlighting
-* fzf-tab
+* 🖥️ Zsh como shell por defecto.
+* ⚡ Oh My Zsh.
+* 🎨 Powerlevel10k.
+* 🔤 Fuente MesloLGS NF.
+* 🔌 Plugins de Zsh.
+* 🐱 Kitty Terminal.
+* 📦 Herramientas de desarrollo.
+* 🟢 NVM.
+* 🟢 Node.js LTS.
+* 🐙 GitHub CLI.
+* 💻 Visual Studio Code.
+* ⚙️ Configuración de VS Code.
+* 🧩 Instalación automática de extensiones de VS Code.
+* 🔗 Symlinks para mantener toda la configuración versionada.
+
+---
+
+# 📦 Software instalado
+
+## Terminal
+
+* git
+* curl
+* wget
+* unzip
+* zsh
+* kitty
+
+## Utilidades
+
 * eza
 * bat
 * fzf
 * zoxide
 * ripgrep
-* fd
+* fd-find
 * btop
-* Fastfetch
+* fastfetch
 * jq
 * htop
 * tree
-* Neovim
+* neovim
+
+## Desarrollo
+
+* NVM
+* Node.js LTS
+* GitHub CLI
+* Visual Studio Code
 
 ---
 
-## ⚙️ Configuraciones gestionadas
+# 🧩 Extensiones de Visual Studio Code
 
-Actualmente el repositorio versiona la configuración de:
-
-* Kitty
-* Zsh
-* Powerlevel10k
-* Git
-* Fastfetch
-* btop
-
----
-
-## 📁 Estructura del proyecto
+El instalador instala automáticamente las extensiones definidas en:
 
 ```text
-dotfiles/
-├── config/
-│   ├── btop/
-│   ├── fastfetch/
-│   ├── git/
-│   ├── kitty/
-│   └── zsh/
-├── fonts/
-│   └── MesloLGSNF/
-├── scripts/
+config/vscode/extensions.txt
+```
+
+Actualmente:
+
+* Tailwind CSS IntelliSense
+* Catppuccin Theme
+* Catppuccin Icons
+* Path Intellisense
+* ESLint
+* ES7 React Snippets
+* GitLens
+* Prettier
+* Auto Rename Tag
+* Dev Containers
+* Docker
+* Error Lens
+* Markdown All in One
+
+---
+
+# 📁 Estructura
+
+```text
+dotfiles
+├── config
+│   ├── btop
+│   ├── fastfetch
+│   ├── git
+│   ├── kitty
+│   ├── vscode
+│   └── zsh
+│
+├── scripts
 │   ├── fonts.sh
+│   ├── github.sh
+│   ├── node.sh
 │   ├── oh-my-zsh.sh
 │   ├── packages.sh
 │   ├── powerlevel10k.sh
 │   ├── symlinks.sh
 │   ├── utils.sh
+│   ├── vscode.sh
 │   ├── zsh-plugins.sh
 │   └── zsh.sh
+│
 ├── install.sh
 └── README.md
 ```
 
 ---
 
-## 🚀 Instalación
+# 🚀 Instalación
 
 Clona el repositorio:
 
 ```bash
-git clone https://github.com/Ton3t/dotfiles.git
-```
-
-Entra en la carpeta:
-
-```bash
+git clone <repositorio>
 cd dotfiles
 ```
 
-Da permisos de ejecución:
+Da permisos al instalador:
 
 ```bash
 chmod +x install.sh
 ```
 
-Ejecuta el instalador:
+Ejecuta la instalación:
 
 ```bash
 ./install.sh
 ```
 
----
-
-## 📝 Notas
-
-* El instalador configura **Zsh** como shell por defecto.
-* Kitty se instala y queda configurado automáticamente.
-* Si utilizas un entorno de escritorio (KDE, GNOME, etc.), el terminal predeterminado puede seguir siendo el que venga configurado por defecto. Kitty podrá seleccionarse manualmente desde las preferencias del sistema.
+Al finalizar, el instalador preguntará si deseas reiniciar el sistema para aplicar todos los cambios.
 
 ---
 
-## 🛣️ Roadmap
+# ⚙️ Configuración
 
-### v1.0
+Toda la configuración se mantiene versionada mediante enlaces simbólicos.
 
-* [x] Instalador modular
-* [x] Instalación automática de paquetes
-* [x] Kitty
-* [x] Zsh
-* [x] Oh My Zsh
-* [x] Powerlevel10k
-* [x] Plugins de Zsh
-* [x] MesloLGS NF
-* [x] Git
-* [x] Fastfetch
-* [x] btop
+Actualmente se gestionan:
 
-### v1.1
+* Kitty
+* Git
+* Zsh
+* Powerlevel10k
+* Fastfetch
+* Btop
+* Visual Studio Code
 
-* [ ] Node.js (NVM)
-* [ ] Corepack + pnpm
-* [ ] GitHub CLI
-
-### v2.0
-
-* [ ] Docker
-* [ ] VS Code
-* [ ] Neovim
+Modificar cualquier archivo dentro de `config/` actualiza automáticamente la configuración del sistema.
 
 ---
 
-## 🤝 Contribuciones
+# 🎯 Objetivos
 
-Si encuentras algún problema o tienes una sugerencia para mejorar el proyecto, no dudes en abrir una *Issue* o enviar un *Pull Request*.
+Este proyecto pretende convertirse en un entorno de desarrollo completamente automatizado que incluya:
+
+* ✅ Terminal moderna
+* ✅ Visual Studio Code
+* 🚧 Docker
+* 🚧 LazyGit
+* 🚧 Neovim
+* 🚧 Herramientas adicionales de desarrollo
 
 ---
 
-## 📄 Licencia
+# 📄 Licencia
 
-Este proyecto está distribuido bajo la licencia MIT.
+Proyecto personal para automatizar la configuración de un entorno de desarrollo Linux.

@@ -40,6 +40,21 @@ main() {
 
     success "Instalación base completada."
 
+    echo
+    info "La instalación ha finalizado."
+    echo
+
+    read -rp "¿Deseas reiniciar el sistema ahora? [Y/n] " answer
+
+    case "$answer" in
+        [Nn]*)
+            info "Puedes reiniciar más tarde para aplicar todos los cambios."
+            ;;
+        *)
+            info "Reiniciando..."
+            sudo reboot
+            ;;
+    esac
 
 }
 
