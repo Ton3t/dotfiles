@@ -13,6 +13,7 @@ source "$ROOT_DIR/scripts/powerlevel10k.sh"
 source "$ROOT_DIR/scripts/zsh-plugins.sh"
 source "$ROOT_DIR/scripts/zsh.sh"
 source "$ROOT_DIR/scripts/node.sh"
+source "$ROOT_DIR/scripts/github.sh"
 
 main() {
 
@@ -30,6 +31,8 @@ main() {
 
     install_nvm
     install_node
+
+    install_github_cli
 
     success "Instalación base completada."
 
