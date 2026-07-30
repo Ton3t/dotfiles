@@ -15,6 +15,7 @@ source "$ROOT_DIR/scripts/zsh.sh"
 source "$ROOT_DIR/scripts/node.sh"
 source "$ROOT_DIR/scripts/github.sh"
 source "$ROOT_DIR/scripts/vscode.sh"
+source "$ROOT_DIR/scripts/docker.sh"
 
 main() {
 
@@ -37,6 +38,11 @@ main() {
 
     install_vscode
     install_vscode_extensions
+
+    install_docker_repository
+    install_docker
+    configure_docker
+    verify_docker
 
     success "Instalación base completada."
 
