@@ -58,7 +58,7 @@ configure_docker() {
     sudo usermod -aG docker "$USER"
 
     success "Usuario añadido al grupo docker."
-    warning "Será necesario reiniciar la sesión para aplicar este cambio."
+    warning "Los cambios se aplicarán tras reiniciar la sesión."
 
 }
 
@@ -67,7 +67,6 @@ verify_docker() {
     info "Comprobando instalación de Docker..."
 
     docker --version
-
     docker compose version
 
     success "Docker funciona correctamente."
