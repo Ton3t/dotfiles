@@ -30,3 +30,6 @@ alias dlog="docker logs -f"
 # Actualizar
 alias update="sudo apt update && sudo apt upgrade -y"
 alias install="sudo apt install"
+
+# Lazygit
+alias lg="lazygit"

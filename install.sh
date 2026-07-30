@@ -16,6 +16,7 @@ source "$ROOT_DIR/scripts/node.sh"
 source "$ROOT_DIR/scripts/github.sh"
 source "$ROOT_DIR/scripts/vscode.sh"
 source "$ROOT_DIR/scripts/docker.sh"
+source "$ROOT_DIR/scripts/lazygit.sh"
 
 main() {
 
@@ -35,6 +36,8 @@ main() {
     install_node
 
     install_github_cli
+
+    install_lazygit
 
     install_vscode
     install_vscode_extensions
