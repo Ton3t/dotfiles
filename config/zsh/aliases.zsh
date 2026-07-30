@@ -18,3 +18,15 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 alias gl="git log --oneline --graph --decorate"
+
+# Docker
+alias d="docker"
+alias dc="docker compose"
+alias dps="docker ps"
+alias di="docker images"
+alias dex="docker exec -it"
+alias dlog="docker logs -f"
+
+# Actualizar
+alias update="sudo apt update && sudo apt upgrade -y"
+alias install="sudo apt install"
