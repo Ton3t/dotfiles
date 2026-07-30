@@ -20,7 +20,6 @@ install_terminal_packages() {
         jq
         htop
         tree
-        neovim
     )
 
     info "Instalando herramientas de terminal..."

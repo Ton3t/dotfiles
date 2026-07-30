@@ -51,7 +51,6 @@ Actualmente el instalador configura automáticamente:
 * jq
 * htop
 * tree
-* neovim
 
 ## Desarrollo
 
@@ -170,7 +169,6 @@ Este proyecto pretende convertirse en un entorno de desarrollo completamente aut
 * ✅ Visual Studio Code
 * 🚧 Docker
 * 🚧 LazyGit
-* 🚧 Neovim
 * 🚧 Herramientas adicionales de desarrollo
 
 ---
