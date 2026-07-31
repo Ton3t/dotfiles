@@ -9,10 +9,6 @@ install_lazygit() {
 
     info "Instalando LazyGit..."
 
-    sudo add-apt-repository -y ppa:lazygit-team/release
-
-    sudo apt update
-
     sudo apt install -y lazygit
 
     success "LazyGit instalado."
